@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  supabase-inactive-fix:
+    build: .
+    volumes:
+      - ./logfile.log:/app/logfile.log
+    environment:
+      - TZ=UTC
+      - SUPABASE_URL=https://your-project-id.supabase.co
+      - SUPABASE_KEY=secret-supabase-key
+    restart: unless-stopped 
